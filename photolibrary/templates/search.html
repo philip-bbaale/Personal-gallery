@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+
+  <div class="row mt-5">
+    {% if searched_pictures%}
+      <h2>Found {{ searched_pictures|length }} of searched term- <span class="text_primary">{{message}}</span></h2>
+    {% else %}
+      <h2> Found 0 pictures for the search term- <span class="text-primary">{{message}}</span>.</h2>
+    {% endif %}
+  </div>
+  <hr class="bg-primary">
+  {% if searched_pictures %}
+  <div class="row mt-5">
+    {% for picture in searched_pictures %}
+        <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mb-3 ">
+            <a href="{% url 'pictures_detail' picture.pk %}"><img src="{{picture.image.url}}" class="img-responsive img-thumbnail shadow-lg" alt="Image"></a>
+        </div>
+    {% endfor %}
+  </div>
+  {% endif %}
+</div>
+{% endblock %}

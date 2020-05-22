@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="col-md-8 offset-md-2 mt-5">
+    <h1>{{ category | title }}</h1>
+    <hr class="bg-success">
+    <div class="row mt-5">
+        {% for picture in pictures %}
+            <div class="col-xs-6 col-sm-6 col-md-4 col-lg-2 mb-3 ">
+                <a href="{% url 'pictures_detail' picture.pk %}"><img src="{{picture.image.url}}" class="img-responsive img-thumbnail shadow-lg" alt="Image"></a>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
