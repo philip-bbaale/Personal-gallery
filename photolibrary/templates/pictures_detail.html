@@ -17,7 +17,7 @@
               <h5>Category: 
                 <span class="badge badge-secondary">
                   {% for category in picture.image_category.all %}
-                  <a href="{% url 'pictures_category' category.category %}" class="text-light">
+                  <a href="" class="text-light"><!--{% url 'pictures_category' category.category %}-->
                         {{ category.category }}.  
                   </a>&nbsp;
                   {% endfor %}
