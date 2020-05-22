@@ -28,7 +28,8 @@ SECRET_KEY = 'v5#r@$h=t5!0)j(_t!%h)g4th1k)z#$k^9ocg&7$vu_)b5-l&a'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'pipgallery.herokuapp.com''
+    'pipgallery.herokuapp.com',
+    'localhost'
 ]
 
 
