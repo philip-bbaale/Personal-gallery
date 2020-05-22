@@ -14,4 +14,5 @@ class LocationAdmin(admin.ModelAdmin):
 admin.site.register(Location, LocationAdmin)
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Pictures,PicturesAdmin)
+<!---->
 
