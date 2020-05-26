@@ -11,7 +11,6 @@ urlpatterns = [
     path('<int:pk>/', views.pictures_detail, name='pictures_detail'),
     path('<category>/', views.pictures_category, name="pictures_category"),
     path('<location>/', views.pictures_location, name="pictures_location"),
-    
 ]
 
 if settings.DEBUG:
