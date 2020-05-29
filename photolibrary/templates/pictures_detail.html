@@ -13,7 +13,7 @@
               <h2 class="card-title">{{ picture.image_name }}</h2>
               <p class="card-text"><small class="text-muted">Last updated {{picture.last_modified}}</small></p>
               <p class="card-text">{{picture.image_description}}</p>
-              <h5>Location: <span class="badge badge-secondary">{{picture.image_location}}</span></h5><!--{% url 'pictures_location' picture.image_location %}-->
+              <h5>Location: <span class="badge badge-secondary"><a class="text-light" href="{% url 'pictures_location' picture.image_location %}">{{picture.image_location}}</a></span></h5><!--{% url 'pictures_location' picture.image_location %}-->
               <h5>Category: 
                 <span class="badge badge-secondary">
                   {% for category in picture.image_category.all %}
@@ -23,11 +23,11 @@
                   {% endfor %}
                 </span>
               </h5>
+              <a class="btn btn-outline-secondary mt-2" href="{{picture.image.url}}">Copy Image</a>
             </div>
           </div>
         </div>
       </div>
-
 </div>
 
 {% endblock %}
