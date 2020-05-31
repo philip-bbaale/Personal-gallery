@@ -11,6 +11,7 @@ urlpatterns = [
     path('<int:pk>/', views.pictures_detail, name='pictures_detail'),
     path('category/<category>/', views.pictures_category, name="pictures_category"),
     path('location/<location>/', views.pictures_location, name="pictures_location"),
+    path('<str:image_url>/', views.copy_image,name='copy_image')
 ]
 
 if settings.DEBUG:

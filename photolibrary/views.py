@@ -2,6 +2,7 @@ from django.shortcuts import render
 from photolibrary.models import Pictures, Category, Location
 import random
 import os
+import pyperclip
 
 # Create your views here.
 def pictures_index(request):
@@ -56,3 +57,10 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message, 'view_locations':view_location})
+
+def copy_image(request, image_url):
+    picture_url = image_url
+    pyperclip.copy(picture_url)
+    pyperclip.paste()
+    return render(request, 'pictures_detail.html')
+
